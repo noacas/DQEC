@@ -244,22 +244,6 @@ class Honeycomb666Code:
 
         return np.array(stabilizers, dtype=np.dtype('b'))
 
-    @property
-    def flatXflips2Zerr(self):
-        _flatXflips2Zerr = np.zeros((1, self.n_qubits), dtype=np.dtype('b'))
-        for level in range(self.n_level):
-            if self._is_qubit_on_right_edge_in_level(level):
-                _flatXflips2Zerr[0, self._qubit_index(level, 0)] = 1
-        return _flatXflips2Zerr
-
-    @property
-    def flatZflips2Xerr(self):
-        L = self.L
-        _flatZflips2Xerr = np.zeros((1, self.n_qubits), dtype=np.dtype('b'))
-        for level in range(self.n_level):
-            _flatZflips2Xerr[0, self._qubit_index(level, 0)] = 1
-        return _flatZflips2Xerr
-
     def _logical_operators(self):
         logical_operators = np.zeros((1, self.n_qubits), dtype=np.dtype('b'))
         for level in range(self.n_level):
