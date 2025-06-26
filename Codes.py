@@ -181,7 +181,7 @@ class Honeycomb666Code:
         stabilizers = []
         # Red stabilizers
         for level in range(0, self.n_level - 2, 3):
-            # stabilizer on the right edge
+            # stabilizer on the left edge
             stab = np.zeros((self.n_qubits,), dtype=np.dtype('b'))
             stab[self._qubit_index(level, 0)] = 1
             stab[self._qubit_index(level + 1, 0)] = 1
@@ -202,7 +202,7 @@ class Honeycomb666Code:
 
         # Blue stabilizers
         for level in range(1, self.n_level - 2, 3):
-            # stabilizer on the left edge
+            # stabilizer on the right edge
             stab = np.zeros((self.n_qubits,), dtype=np.dtype('b'))
             stab[self._qubit_index(level, -1)] = 1
             stab[self._qubit_index(level + 1, -1)] = 1
