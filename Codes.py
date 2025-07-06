@@ -17,6 +17,7 @@ class Code:
     '''
     def __init__(self, code_type, code_L, noise_type='depolarization'):
         self.code_type = code_type
+        self.distance = code_L
         H, Lx = eval(f'Get_{code_type}_Code')(code_L, full_H=noise_type)
         self.logic_matrix = torch.from_numpy(Lx).long()
         self.pc_matrix = torch.from_numpy(H).long()

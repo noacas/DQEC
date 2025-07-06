@@ -190,7 +190,7 @@ if __name__ == '__main__':
     parser.add_argument('--repetitions', type=int, default=1)
     parser.add_argument('--noise_type', type=str,default='depolarization', choices=['independent','depolarization'])
     #    
-    parser.add_argument('--decoder', type=str,default='mwpm', choices=['u-f','mwpm'])
+    parser.add_argument('--decoder', type=str,default='mwpm', choices=['u-f','mwpm', 'grpahqec'])
 
     args = parser.parse_args()
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"

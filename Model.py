@@ -19,8 +19,7 @@ def diff_syndrome(H,x):
     H_bin = sign_to_bin(H) if -1 in H else H
     # x_bin = sign_to_bin(x) if -1 in x else x
     x_bin = x
-    
-        
+
     tmp = bin_to_sign(H_bin.unsqueeze(0)*x_bin.unsqueeze(-1))
     tmp = torch.prod(tmp,1)
     tmp = sign_to_bin(tmp)
